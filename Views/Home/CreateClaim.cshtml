@@ -1,0 +1,171 @@
+﻿@model WebApplication3.Models.LecturerClaimModel
+
+@{
+    // Set the page title
+    ViewData["Title"] = "Create Claim";
+}
+
+<!-- Inline CSS to style the form uniquely -->
+<style>
+    /* General body styling */
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f4f7f6;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Styling for the form container */
+    form {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 30px;
+        margin: 30px auto;
+        width: 80%;
+        max-width: 800px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Title and headers */
+    h2, h3 {
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    /* Form group styling */
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        font-weight: 500;
+        color: #34495e;
+    }
+
+    .form-control {
+        border: 1px solid #bdc3c7;
+        border-radius: 5px;
+        padding: 10px;
+        width: 100%;
+        font-size: 1em;
+        color: #2c3e50;
+    }
+
+    /* Table styling */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 30px;
+    }
+
+    table th, table td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    table th {
+        background-color: #ecf0f1;
+        color: #2c3e50;
+    }
+
+    table td {
+        color: #34495e;
+    }
+
+    /* Buttons styling */
+    .btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+        margin-right: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary {
+        background-color: #3498db;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: #2980b9;
+    }
+
+    .btn-secondary {
+        background-color: #95a5a6;
+        color: white;
+    }
+
+    .btn-secondary:hover {
+        background-color: #7f8c8d;
+    }
+</style>
+
+<h2>Create Claim</h2>
+
+<!-- Form for submitting the claim -->
+<form asp-action="SubmitClaim" method="post">
+    <!-- Lecturer name input -->
+    <div class="form-group">
+        <label for="LecturerName">Lecturer Name:</label>
+        <input asp-for="LecturerName" class="form-control" />
+    </div>
+
+    <!-- Lecturer surname input -->
+    <div class="form-group">
+        <label for="LecturerSurname">Lecturer Surname:</label>
+        <input asp-for="LecturerSurname" class="form-control" />
+    </div>
+
+    <!-- Employee number input -->
+    <div class="form-group">
+        <label for="EmployeeNumber">Employee No:</label>
+        <input asp-for="EmployeeNumber" class="form-control" />
+    </div>
+
+    <!-- Contact details input -->
+    <div class="form-group">
+        <label for="ContactDetails">Contact Details:</label>
+        <input asp-for="ContactDetails" class="form-control" />
+    </div>
+
+    <h3>Claim Details</h3>
+
+    <!-- Table for displaying claim details -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Module</th>
+                <th>Programme</th>
+                <th>Hours Worked</th>
+                <th>Hourly Rate</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (var i = 0; i < Model.ModuleClaims.Count; i++)
+            {
+                <!-- Iterate over each module claim -->
+                <tr>
+                    <td><input asp-for="ModuleClaims[@i].Module" class="form-control" /></td>
+                    <td><input asp-for="ModuleClaims[@i].Programme" class="form-control" /></td>
+                    <td><input asp-for="ModuleClaims[@i].HoursWorked" class="form-control" /></td>
+                    <td><input asp-for="ModuleClaims[@i].HourlyRate" class="form-control" /></td>
+                    <td>@(Model.ModuleClaims[@i].TotalClaim)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Submit button for the claim -->
+    <button type="submit" class="btn btn-primary">Submit Claim</button>
+</form>
+
+<!-- Form for adding another module -->
+<form asp-action="AddModule" method="post">
+    <button type="submit" class="btn btn-secondary">Add Another Module</button>
+</form>

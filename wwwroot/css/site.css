@@ -1,0 +1,92 @@
+/* Styles for the form layout */
+form {
+    margin-top: 20px; /* Space above the form */
+    margin-bottom: 40px; /* Space below the form */
+}
+
+/* Styles for input fields */
+input.form-control {
+    margin-bottom: 15px; /* Space below each input field */
+    padding: 10px; /* Padding inside input fields */
+    font-size: 14px; /* Font size for input text */
+}
+
+/* Styles for tables */
+table {
+    margin-top: 20px; /* Space above the table */
+    width: 100%; /* Full width of the container */
+}
+
+    table th, table td {
+        text-align: left; /* Align text to the left */
+        padding: 10px; /* Padding inside table cells */
+    }
+
+    table thead th {
+        background-color: #f8f9fa; /* Light background for table headers */
+    }
+
+    table tbody tr:nth-child(even) {
+        background-color: #f2f2f2; /* Light gray background for even rows */
+    }
+
+/* Styles for buttons */
+button.btn {
+    margin-right: 10px; /* Space to the right of buttons */
+}
+
+/* Primary button styles */
+button[type="submit"].btn-primary {
+    background-color: #007bff; /* Blue background for primary button */
+    border-color: #007bff; /* Border color matching the background */
+}
+
+    button[type="submit"].btn-primary:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        border-color: #004085; /* Darker border on hover */
+    }
+
+/* Secondary button styles */
+button[type="submit"].btn-secondary {
+    background-color: #6c757d; /* Gray background for secondary button */
+    border-color: #6c757d; /* Border color matching the background */
+}
+
+    button[type="submit"].btn-secondary:hover {
+        background-color: #565e64; /* Darker gray on hover */
+        border-color: #494f54; /* Darker border on hover */
+    }
+
+/* Styles for section titles */
+h2, h3 {
+    margin-top: 20px; /* Space above section titles */
+    color: #343a40; /* Dark color for text */
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+/* Padding for container elements */
+.container {
+    padding: 20px; /* Padding inside the container */
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+    .form-group {
+        margin-bottom: 10px; /* Reduced space for form groups on small screens */
+    }
+
+    table {
+        font-size: 14px; /* Smaller font size for tables on small screens */
+    }
+}
+
+/* Overall body styling for spacing */
+body {
+    padding: 20px; /* Padding around the body content */
+}
+
+/* Styles for h3 headers with a bottom border */
+h3 {
+    border-bottom: 2px solid #ddd; /* Light gray border below h3 headers */
+    padding-bottom: 10px; /* Padding below the text */
+}

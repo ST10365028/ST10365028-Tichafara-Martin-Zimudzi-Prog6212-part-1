@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Submit Claim";
+}
+
+<h2>Submit Your Claim</h2>
+
+<form method="post" class="form-horizontal">
+    <div class="form-group">
+        <h3>Personal Details</h3>
+        <label for="LecturerName">Lecturer Name:</label>
+        <input type="text" class="form-control" id="LecturerName" name="LecturerName" />
+
+        <label for="LecturerSurname">Lecturer Surname:</label>
+        <input type="text" class="form-control" id="LecturerSurname" name="LecturerSurname" />
+
+        <label for="EmployeeNo">Employee No:</label>
+        <input type="text" class="form-control" id="EmployeeNo" name="EmployeeNo" />
+
+        <label for="ContactDetails">Contact Details:</label>
+        <input type="text" class="form-control" id="ContactDetails" name="ContactDetails" />
+    </div>
+
+    <div class="form-group">
+        <h3>Claim Details</h3>
+        <label for="Module">Module:</label>
+        <input type="text" class="form-control" id="Module" name="Module" />
+
+        <label for="Programme">Programme:</label>
+        <input type="text" class="form-control" id="Programme" name="Programme" />
+
+        <label for="NumberOfHours">Number of Hours:</label>
+        <input type="text" class="form-control" id="NumberOfHours" name="NumberOfHours" />
+
+        <label for="HourlyRate">Hourly Rate:</label>
+        <input type="text" class="form-control" id="HourlyRate" name="HourlyRate" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit Claim</button>
+    <button type="button" class="btn btn-secondary">Add Another Module</button>
+
+
+</form>

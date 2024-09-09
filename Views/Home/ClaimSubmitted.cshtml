@@ -1,0 +1,38 @@
+﻿@model WebApplication3.Models.LecturerClaimModel
+
+@{
+    ViewData["Title"] = "Claim Submitted";
+}
+
+<h2>Claim Submitted</h2>
+
+<p>Lecturer Name: @Model.LecturerName</p>
+<p>Lecturer Surname: @Model.LecturerSurname</p>
+<p>Employee No: @Model.EmployeeNumber</p>
+<p>Contact Details: @Model.ContactDetails</p>
+
+<h3>Claim Details</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Module</th>
+            <th>Programme</th>
+            <th>Hours Worked</th>
+            <th>Hourly Rate</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var claim in Model.ModuleClaims)
+        {
+            <tr>
+                <td>@claim.Module</td>
+                <td>@claim.Programme</td>
+                <td>@claim.HoursWorked</td>
+                <td>@claim.HourlyRate</td>
+                <td>@claim.TotalClaim</td>
+            </tr>
+        }
+    </tbody>
+</table>
